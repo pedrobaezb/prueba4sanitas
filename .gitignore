@@ -26,7 +26,11 @@ hs_err_pid*
 .idea/
 *.iml
 *.iws
+*.ipr
 
 # Maven
 log/
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
