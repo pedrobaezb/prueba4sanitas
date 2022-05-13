@@ -6,11 +6,25 @@ import org.springframework.stereotype.Service;
 public class ValidadorCalculadoraImpl implements ValidadorCalculadora{
     @Override
     public boolean validaSuma(Terminos terminos) {
-        return false;
+        return validaTerminos(terminos);
     }
 
     @Override
     public boolean validaResta(Terminos terminos) {
-        return false;
+        return validaTerminos(terminos);
+    }
+
+    private boolean validaTerminos(Terminos terminos) {
+        boolean esValido=false;
+        if(terminos==null)
+            return esValido;
+        if(terminos.getTerminos()==null)
+            return esValido;
+
+        if(terminos.getTerminos().size()!=2)
+            return esValido;
+
+        esValido=true;
+        return esValido;
     }
 }
