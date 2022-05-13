@@ -1,14 +1,14 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Terminos {
-    private ArrayList<Float> terminos;
+    private List<Float> terminos;
 
     public Terminos() {
     }
 
-    public Terminos(ArrayList<Float> terminos) {
+    public Terminos(List<Float> terminos) {
         this.terminos = terminos;
     }
 
@@ -19,11 +19,11 @@ public class Terminos {
                 '}';
     }
 
-    public ArrayList<Float> getTerminos() {
+    public List<Float> getTerminos() {
         return terminos;
     }
 
-    public void setTerminos(ArrayList<Float> terminos) {
+    public void setTerminos(List<Float> terminos) {
         this.terminos = terminos;
     }
 }
