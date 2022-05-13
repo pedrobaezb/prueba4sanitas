@@ -5,8 +5,11 @@ Micro servicio Calculadora
 
 Este servicio realiza una serie de cálculos básicos, suma y resta de 2 elementos
 
-Para arrancar el servicio ejecutar mvnw spring-boot:run
-(o manualmente con mvnw package y java -jar target/calculadora-0.0.1-SNAPSHOT.jar)
+Para arrancar el servicio ejecutar mvnw spring-boot:run o manualmente con mvnw package y 
+java -jar target/calculadora-0.0.1-SNAPSHOT.jar
+
+Adicionalmente hay un endpoint de Swagger con la descripción de las operaciones que esta (una vez arrancada la
+aplicación) en http://localhost:8080/swagger-ui/index.html
 
 Los enpoints implementados actualmente son:
 
