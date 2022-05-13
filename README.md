@@ -14,11 +14,11 @@ POST http://localhost:8080/calculadora/suma
     Operación de sumar
     Consume un application/json  con un objeto con la clave términos y dentro un array de 2 elementos con números
         {
-            terminos: [1,2]
+            "terminos": [1,2]
         }
     Produce un application/json con un objeto con el resultado
         {
-            resultado: 3
+            "resultado": 3
         }
     
 POST http://localhost:8080/calculadora/resta
@@ -26,11 +26,11 @@ POST http://localhost:8080/calculadora/resta
     Consume un application/json  con un objeto con la clave términos y dentro un array de 2 elementos con números, el
     orden en este caso es importante, ya que resta los números en el orden dentro del array
         {
-            terminos: [3,2]
+            "terminos": [3,2]
         }
     Produce un application/json con un objeto con el resultado
         {
-            resultado: 1
+            "resultado": 1
         }
     
 GET http://localhost:8080/health
