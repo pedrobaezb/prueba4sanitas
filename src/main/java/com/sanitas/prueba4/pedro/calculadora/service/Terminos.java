@@ -22,8 +22,4 @@ public class Terminos {
     public List<Float> getTerminos() {
         return terminos;
     }
-
-    public void setTerminos(List<Float> terminos) {
-        this.terminos = terminos;
-    }
 }

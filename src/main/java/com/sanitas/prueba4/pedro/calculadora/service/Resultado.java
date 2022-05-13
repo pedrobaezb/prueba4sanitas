@@ -1,10 +1,7 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
 public class Resultado {
-    private Float resultado;
-
-    public Resultado() {
-    }
+    private final Float resultado;
 
     public Resultado(Float resultado) {
         this.resultado = resultado;
@@ -19,9 +16,5 @@ public class Resultado {
 
     public Float getResultado() {
         return resultado;
-    }
-
-    public void setResultado(Float resultado) {
-        this.resultado = resultado;
     }
 }

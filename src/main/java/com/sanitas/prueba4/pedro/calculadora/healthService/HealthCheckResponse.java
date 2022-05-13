@@ -19,20 +19,4 @@ public class HealthCheckResponse {
                 ", statusDetail='" + statusDetail + '\'' +
                 '}';
     }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getStatusDetail() {
-        return statusDetail;
-    }
-
-    public void setStatusDetail(String statusDetail) {
-        this.statusDetail = statusDetail;
-    }
 }

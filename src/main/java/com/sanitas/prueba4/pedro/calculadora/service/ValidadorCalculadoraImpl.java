@@ -15,16 +15,11 @@ public class ValidadorCalculadoraImpl implements ValidadorCalculadora{
     }
 
     private boolean validaTerminos(Terminos terminos) {
-        boolean esValido=false;
         if(terminos==null)
-            return esValido;
+            return false;
         if(terminos.getTerminos()==null)
-            return esValido;
+            return false;
 
-        if(terminos.getTerminos().size()!=2)
-            return esValido;
-
-        esValido=true;
-        return esValido;
+        return terminos.getTerminos().size() == 2;
     }
 }

@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.List;
 
 class CalculadoraImplTest {
-    CalculadoraImpl calculadoraImpl = new CalculadoraImpl();
+    final CalculadoraImpl calculadoraImpl = new CalculadoraImpl();
 
     @Test
     void testSumar() {

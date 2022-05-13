@@ -1,8 +1,6 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
-import com.sanitas.prueba4.pedro.calculadora.utils.CalculadoraTracer;
 import io.corp.calculator.TracerAPI;
-import io.corp.calculator.TracerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/calculadora")
 public class CalculadoraController {
-    private static Logger log = LoggerFactory.getLogger(CalculadoraController.class);
-    private static TracerAPI tracer;
+    private static final Logger log = LoggerFactory.getLogger(CalculadoraController.class);
+    private final TracerAPI tracer;
 
-    private Calculadora calculadora;
+    private final Calculadora calculadora;
 
-    private ValidadorCalculadora validadorCalculadora;
+    private final ValidadorCalculadora validadorCalculadora;
 
 
     @Autowired
