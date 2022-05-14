@@ -1,6 +1,6 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
-import io.corp.calculator.TracerAPI;
+import io.corp.calculator.TracerImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class CalculadoraControllerTest {
     @Mock
     ValidadorCalculadora validadorCalculadora;
     @Mock
-    TracerAPI tracerAPI;
+    TracerImpl tracer;
     @InjectMocks
     CalculadoraController calculadoraController;
 
@@ -33,7 +33,7 @@ class CalculadoraControllerTest {
     void testSumaCorrecta() {
         when(calculadora.sumar(any())).thenReturn(new Resultado(5.4f));
         when(validadorCalculadora.validaSuma(any())).thenReturn(true);
-        tracerAPI.trace(any());
+        tracer.trace(any());
 
         ResponseEntity<Resultado> result = calculadoraController.suma(new Terminos(Arrays.asList(1.1f,2.2f)));
         Assertions.assertEquals(200, result.getStatusCodeValue());
@@ -45,7 +45,7 @@ class CalculadoraControllerTest {
     void testSumaErronea() {
         when(calculadora.sumar(any())).thenReturn(new Resultado(5.4f));
         when(validadorCalculadora.validaSuma(any())).thenReturn(false);
-        tracerAPI.trace(any());
+        tracer.trace(any());
 
         ResponseEntity<Resultado> result = calculadoraController.suma(new Terminos(Arrays.asList(1.1f,2.2f)));
         Assertions.assertEquals(400, result.getStatusCodeValue());
@@ -55,7 +55,7 @@ class CalculadoraControllerTest {
     void testRestaCorrecta() {
         when(calculadora.restar(any())).thenReturn(new Resultado(2.3f));
         when(validadorCalculadora.validaResta(any())).thenReturn(true);
-        tracerAPI.trace(any());
+        tracer.trace(any());
 
         ResponseEntity<Resultado> result = calculadoraController.resta(new Terminos(Arrays.asList(1.1f,2.2f)));
         Assertions.assertEquals(200, result.getStatusCodeValue());
@@ -67,7 +67,7 @@ class CalculadoraControllerTest {
     void testRestaErronea() {
         when(calculadora.restar(any())).thenReturn(new Resultado(2.3f));
         when(validadorCalculadora.validaResta(any())).thenReturn(false);
-        tracerAPI.trace(any());
+        tracer.trace(any());
 
         ResponseEntity<Resultado> result = calculadoraController.resta(new Terminos(Arrays.asList(1.1f,2.2f)));
         Assertions.assertEquals(400, result.getStatusCodeValue());
