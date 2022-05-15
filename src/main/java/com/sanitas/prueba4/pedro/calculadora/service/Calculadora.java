@@ -1,7 +1,9 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
 
+import java.math.BigDecimal;
+
 public interface Calculadora {
-    Resultado sumar(Terminos terminos);
-    Resultado restar(Terminos terminos);
+    BigDecimal sumar(Terminos terminos);
+    BigDecimal restar(Terminos terminos);
 }

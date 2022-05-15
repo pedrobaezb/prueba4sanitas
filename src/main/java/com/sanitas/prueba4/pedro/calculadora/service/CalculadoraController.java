@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping("/calculadora")
 public class CalculadoraController {
@@ -29,11 +31,11 @@ public class CalculadoraController {
     }
 
     @PostMapping("/suma")
-    public ResponseEntity<Resultado> suma(@RequestBody Terminos terminos) {
+    public ResponseEntity<BigDecimal> suma(@RequestBody Terminos terminos) {
         log.debug("Terminos recibidos {}", terminos);
         boolean esValido=validadorCalculadora.validaSuma(terminos);
         if(esValido) {
-            Resultado resultado=calculadora.sumar(terminos);
+            BigDecimal resultado=calculadora.sumar(terminos);
             log.debug("Resultado {}",resultado);
             tracer.trace(resultado);
             return ResponseEntity.ok(resultado);
@@ -42,11 +44,11 @@ public class CalculadoraController {
     }
 
     @PostMapping("/resta")
-    public ResponseEntity<Resultado> resta(@RequestBody Terminos terminos) {
+    public ResponseEntity<BigDecimal> resta(@RequestBody Terminos terminos) {
         log.debug("Terminos recibidos {}", terminos);
         boolean esValido=validadorCalculadora.validaResta(terminos);
         if(esValido) {
-            Resultado resultado=calculadora.restar(terminos);
+            BigDecimal resultado=calculadora.restar(terminos);
             log.debug("Resultado {}",resultado);
             tracer.trace(resultado);
             return ResponseEntity.ok(resultado);

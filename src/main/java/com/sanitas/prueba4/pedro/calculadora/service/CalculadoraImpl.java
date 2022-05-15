@@ -6,20 +6,20 @@ import java.math.BigDecimal;
 
 @Service
 public class CalculadoraImpl implements Calculadora {
-    public Resultado sumar(Terminos terminos) {
+    public BigDecimal sumar(Terminos terminos) {
         BigDecimal resultado=new BigDecimal(0);
         for (BigDecimal termino: terminos.getTerminos()) {
             resultado=resultado.add(termino);
         }
-        return new Resultado(resultado);
+        return resultado;
     }
 
-    public Resultado restar(Terminos terminos) {
+    public BigDecimal restar(Terminos terminos) {
         BigDecimal resultado=terminos.getTerminos().get(0);
         for (BigDecimal termino: terminos.getTerminos().subList(1, terminos.getTerminos().size())) {
             resultado=resultado.subtract(termino);
         }
-        return new Resultado(resultado);
+        return resultado;
     }
 
 }
