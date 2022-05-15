@@ -1,5 +1,8 @@
-package com.sanitas.prueba4.pedro.calculadora.service;
+package com.sanitas.prueba4.pedro.calculadora.controller;
 
+import com.sanitas.prueba4.pedro.calculadora.service.Calculadora;
+import com.sanitas.prueba4.pedro.calculadora.bean.Terminos;
+import com.sanitas.prueba4.pedro.calculadora.validator.ValidadorCalculadora;
 import io.corp.calculator.TracerImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

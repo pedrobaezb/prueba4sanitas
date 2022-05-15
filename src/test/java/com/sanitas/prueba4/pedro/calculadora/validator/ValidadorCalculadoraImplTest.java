@@ -1,5 +1,7 @@
-package com.sanitas.prueba4.pedro.calculadora.service;
+package com.sanitas.prueba4.pedro.calculadora.validator;
 
+import com.sanitas.prueba4.pedro.calculadora.bean.Terminos;
+import com.sanitas.prueba4.pedro.calculadora.validator.ValidadorCalculadoraImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

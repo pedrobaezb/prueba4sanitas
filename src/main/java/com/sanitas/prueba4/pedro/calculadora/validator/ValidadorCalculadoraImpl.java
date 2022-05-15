@@ -1,5 +1,6 @@
-package com.sanitas.prueba4.pedro.calculadora.service;
+package com.sanitas.prueba4.pedro.calculadora.validator;
 
+import com.sanitas.prueba4.pedro.calculadora.bean.Terminos;
 import org.springframework.stereotype.Service;
 
 @Service

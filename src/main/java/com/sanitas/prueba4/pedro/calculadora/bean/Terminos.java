@@ -1,4 +1,4 @@
-package com.sanitas.prueba4.pedro.calculadora.service;
+package com.sanitas.prueba4.pedro.calculadora.bean;
 
 import java.math.BigDecimal;
 import java.util.List;

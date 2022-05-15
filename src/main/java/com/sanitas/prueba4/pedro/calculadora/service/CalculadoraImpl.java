@@ -1,5 +1,6 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
+import com.sanitas.prueba4.pedro.calculadora.bean.Terminos;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
