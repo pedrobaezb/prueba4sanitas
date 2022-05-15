@@ -32,27 +32,37 @@ public class CalculadoraController {
 
     @PostMapping("/suma")
     public ResponseEntity<BigDecimal> suma(@RequestBody Terminos terminos) {
-        log.debug("Terminos recibidos {}", terminos);
-        boolean esValido=validadorCalculadora.validaSuma(terminos);
-        if(esValido) {
-            BigDecimal resultado=calculadora.sumar(terminos);
-            log.debug("Resultado {}",resultado);
-            tracer.trace(resultado);
-            return ResponseEntity.ok(resultado);
+        try {
+            log.debug("Terminos recibidos {}", terminos);
+            boolean esValido = validadorCalculadora.validaSuma(terminos);
+            if (esValido) {
+                BigDecimal resultado = calculadora.sumar(terminos);
+                log.debug("Resultado {}", resultado);
+                tracer.trace(resultado);
+                return ResponseEntity.ok(resultado);
+            }
+            return ResponseEntity.badRequest().build();
+        } catch (Exception e) {
+            log.error("Error general en la operacion suma",e);
+            return ResponseEntity.internalServerError().build();
         }
-        return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/resta")
     public ResponseEntity<BigDecimal> resta(@RequestBody Terminos terminos) {
-        log.debug("Terminos recibidos {}", terminos);
-        boolean esValido=validadorCalculadora.validaResta(terminos);
-        if(esValido) {
-            BigDecimal resultado=calculadora.restar(terminos);
-            log.debug("Resultado {}",resultado);
-            tracer.trace(resultado);
-            return ResponseEntity.ok(resultado);
+        try {
+            log.debug("Terminos recibidos {}", terminos);
+            boolean esValido=validadorCalculadora.validaResta(terminos);
+            if(esValido) {
+                BigDecimal resultado=calculadora.restar(terminos);
+                log.debug("Resultado {}",resultado);
+                tracer.trace(resultado);
+                return ResponseEntity.ok(resultado);
+            }
+            return ResponseEntity.badRequest().build();
+        } catch (Exception e) {
+            log.error("Error general en la operacion resta",e);
+            return ResponseEntity.internalServerError().build();
         }
-        return ResponseEntity.badRequest().build();
     }
 }
