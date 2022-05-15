@@ -36,8 +36,8 @@ POST http://localhost:8080/calculadora/resta
             "resultado": 1
         }
     
-GET http://localhost:8080/health
+GET http://localhost:8080/actuator/health
     Servicio para comprobar si el servicio esta vivo
     No consume nada
     Produce un application/json con información si esta correcto
-        {"status":0,"statusDetail":"OK"}
+        {"status":"UP"}
