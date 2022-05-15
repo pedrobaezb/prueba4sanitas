@@ -1,14 +1,15 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Terminos {
-    private List<Float> terminos;
+    private List<BigDecimal> terminos;
 
     public Terminos() {
     }
 
-    public Terminos(List<Float> terminos) {
+    public Terminos(List<BigDecimal> terminos) {
         this.terminos = terminos;
     }
 
@@ -19,7 +20,7 @@ public class Terminos {
                 '}';
     }
 
-    public List<Float> getTerminos() {
+    public List<BigDecimal> getTerminos() {
         return terminos;
     }
 }

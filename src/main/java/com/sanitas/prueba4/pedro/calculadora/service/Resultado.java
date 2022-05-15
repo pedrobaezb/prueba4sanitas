@@ -1,9 +1,11 @@
 package com.sanitas.prueba4.pedro.calculadora.service;
 
-public class Resultado {
-    private final Float resultado;
+import java.math.BigDecimal;
 
-    public Resultado(Float resultado) {
+public class Resultado {
+    private final BigDecimal resultado;
+
+    public Resultado(BigDecimal resultado) {
         this.resultado = resultado;
     }
 
@@ -14,7 +16,7 @@ public class Resultado {
                 '}';
     }
 
-    public Float getResultado() {
+    public BigDecimal getResultado() {
         return resultado;
     }
 }
